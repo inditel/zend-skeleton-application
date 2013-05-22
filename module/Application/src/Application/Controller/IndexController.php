@@ -18,43 +18,8 @@ use Zend\View\Model\ViewModel;
 
 class IndexController extends AbstractActionController
 {
-    /**
-     * @var Adapter
-     */
-    private $adapter;
-
-    /**
-     * @param Adapter $adapter
-     */
-    public function __construct(Adapter $adapter )
-    {
-        $this->adapter = $adapter;
-    }
-
-
     public function indexAction()
     {
-
-        $f = new SampleService();
-
-        $sql = new Sql($this->adapter);
-        $select = $sql->select()->from('test')->order("name");
-
-        $statement = $sql->prepareStatementForSqlObject($select);
-        $results = $statement->execute();
-
-        $statement = $sql->prepareStatementForSqlObject($select);
-        $results = $statement->execute();
-
-        $statement = $sql->prepareStatementForSqlObject($select);
-        $results = $statement->execute();
-
-        $statement = $sql->prepareStatementForSqlObject($select);
-        $results = $statement->execute();
-
-        $statement = $sql->prepareStatementForSqlObject($select);
-        $results = $statement->execute();
-
         return new ViewModel();
     }
 }
