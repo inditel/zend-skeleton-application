@@ -12,6 +12,6 @@
         "zendframework/zendframework": ">2.2.0rc1",
         "zendframework/zend-developer-tools": "dev-master",
         "bjyoungblood/bjy-profiler": "dev-master",
-        "phpunit/phpunit": "3.7.20"
+        "phpunit/phpunit": "3.7.21"
     }
 }
