@@ -1,12 +1,5 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: Oliver
- * Date: 22.05.13
- * Time: 10:25
- * To change this template use File | Settings | File Templates.
- */
-namespace Application;//Change this namespace for your test
+namespace Application;
 
 use Zend\Loader\AutoloaderFactory;
 use Zend\Mvc\Service\ServiceManagerConfig;
@@ -28,8 +21,6 @@ class Bootstrap
         // Load the user-defined test configuration file, if it exists; otherwise, load
         if (is_readable(__DIR__ . '/TestConfig.php')) {
             $testConfig = include __DIR__ . '/TestConfig.php';
-        } else {
-            $testConfig = include __DIR__ . '/TestConfig.php.dist';
         }
 
         $zf2ModulePaths = array();

@@ -14,7 +14,7 @@
 
 return array(
     'db' => array(
-        'dsn' => 'mysql:dbname=moodwonder;host=localhost',
+        'dsn' => 'mysql:dbname=zend-skeleton-application;host=localhost',
         'username' => 'root',
         'password' => '',
         'driver' => 'Pdo',

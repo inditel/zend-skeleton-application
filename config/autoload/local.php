@@ -13,7 +13,7 @@
 
 return array(
     'db' => array(
-        'dsn' => 'mysql:dbname=moodwonder;host=localhost',
+        'dsn' => 'mysql:dbname=zend-skeleton-application;host=localhost',
         'username' => 'root',
         'password' => '',
         'driver' => 'Pdo',
@@ -23,7 +23,8 @@ return array(
     ),
     'service_manager' => array(
         'factories' => array(
-            'Zend\Db\Adapter\Adapter' => 'Helpers\Db\Adapter\ProfilingAdapterFactory',
+            'Zend\Db\Adapter\Adapter' => 'BjyProfiler\Db\Adapter\ProfilingAdapterFactory',
+            //'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
         ),
     ),
 );

@@ -1,0 +1,100 @@
+<h1>Errors occurred</h1>
+<table>
+	<tr>
+		<td style="white-space:nowrap;padding-right:5px;font-weight:bold;text-align:right;">Link:</td>
+		<td>
+			<a href="<?php echo $this->meta->url; ?>" target="_blank"><?php echo $this->meta->url; ?>
+		</td>
+	</tr>
+	<?php if (isset($this->meta->getData) && $this->meta->getData != null): ?>
+		<tr>
+			<td style="white-space:nowrap;padding-right:5px;font-weight:bold;text-align:right;">GET-data:</td>
+			<td>
+				<?php echo print_r($this->meta->getData, true); ?>
+			</td>
+		</tr>
+	<?php endif; ?>
+	<?php if (isset($this->meta->postData) && $this->meta->postData != null): ?>
+		<tr>
+			<td style="white-space:nowrap;padding-right:5px;font-weight:bold;text-align:right;">POST-data:</td>
+			<td>
+				<?php echo print_r($this->meta->postData, true); ?>
+			</td>
+		</tr>
+	<?php endif; ?>
+	<?php if (isset($this->meta->sessionData) && $this->meta->sessionData != null): ?>
+		<tr>
+			<td style="white-space:nowrap;padding-right:5px;font-weight:bold;text-align:right;">SESSION-data:</td>
+			<td>
+				<?php echo print_r($this->meta->sessionData, true); ?>
+			</td>
+		</tr>
+	<?php endif; ?>
+	<?php if (isset($this->meta->referer) && trim($this->meta->referer) != ''): ?>
+		<tr>
+			<td style="white-space:nowrap;padding-right:5px;font-weight:bold;text-align:right;">Referer:</td>
+			<td>
+				<a href="<?php echo $this->meta->referer; ?>" target="_blank"><?php echo $this->meta->referer; ?></a>
+			</td>
+		</tr>
+	<?php endif; ?>
+	<tr>
+		<td style="white-space:nowrap;padding-right:5px;font-weight:bold;text-align:right;">User-agent:</td>
+		<td>
+			<?php echo $this->meta->userAgent; ?>
+		</td>
+	</tr>
+	<tr>
+		<td style="white-space:nowrap;padding-right:5px;font-weight:bold;text-align:right;">Time of request:</td>
+		<td>
+			<span>
+				<?php echo round($this->meta->requestDuration,4); ?>
+			</span>
+			<span>ms</span>
+			<span>, </span>
+			<span>
+				<?php echo $this->meta->requestTime->format('d.m.Y H:i'); ?>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td style="white-space:nowrap;padding-right:5px;font-weight:bold;text-align:right;">IP:</td>
+		<td>
+			<?php echo $this->meta->ip; ?>
+		</td>
+	</tr>
+</table>
+
+<?php foreach( $this->sub_templates as $subTemplate) { ?>
+    <?php echo $this->partial($subTemplate['template'],  $subTemplate['values']);?>
+<?php } ?>
+
+<table style="margin:10px;">
+	<?php foreach ((array) $this->errors as $errorException): ?>
+		<tr>
+			<th style="vertical-align:top;text-align:left;font-weight:bold;">
+				<?php echo $errorException->getMessage(); ?> in <?php echo $errorException->getFile().':'.$errorException->getLine() ?>
+			</th>
+		</tr>
+		<tr>
+			<td style="font-size:12px; font-weight:bold;">
+				<?php echo get_class($errorException); ?>
+			</td>
+		</tr>
+		<?php if (method_exists($errorException, 'getSeverity')): ?>
+			<tr>
+				<th style="vertical-align:top;text-align:left;">
+					<span>Severity</span>
+					<span style="font-weight:bold;">
+						<?php echo $errorException->getSeverity(); ?>
+					</span>
+				</th>
+			</tr>
+		<?php endif; ?>
+		<tr>
+			<td style="font-size:12px; padding-bottom:15px;padding-top:5px;">
+				<?php echo trim(ucfirst(nl2br($errorException->getTraceAsString()))); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+</table>
