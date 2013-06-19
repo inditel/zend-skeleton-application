@@ -7,7 +7,7 @@ Installing project
 
 
 Setting up local development environment
-========================================
+----------------------------------------
 
 Add this line to your apache config
 
@@ -21,14 +21,14 @@ Uncomment
 
 
 Setting up PHPStorm environment
-===============================
+-------------------------------
 
 * Open project settings -> PHP -> PHPUnit.
 Set "Use custom loader" and choose vendor/autoload.php file.
 
 
 To start unit testing
-=====================
+---------------------
 
 * Open Run/Debug Configurations
  - Add new PHPUnit configuration
