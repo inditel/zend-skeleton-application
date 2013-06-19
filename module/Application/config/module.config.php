@@ -35,12 +35,12 @@ return array(
     ),
 
     'translator' => array(
-        'locale' => 'en_US',
+        'locale' => 'et_EE',
         'translation_file_patterns' => array(
             array(
                 'type' => 'phpArray',
                 'base_dir' => __DIR__ . '/../language',
-                'pattern' => '%s.mo',
+                'pattern' => '%s.php',
             ),
         ),
     ),

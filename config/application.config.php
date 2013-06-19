@@ -11,12 +11,14 @@ if ($env == APP_ENV_DEVELOPMENT) {
     $modules = array(
         'ZendDeveloperTools',
         'BjyProfiler',
+        'CodeGenerator',
     );
 }
 return array(
 
     'modules' => array_merge($modules, array(
         'Application',
+        'ErrorReporter'
     )),
 
     'module_listener_options' => array(
@@ -24,6 +26,7 @@ return array(
         'module_paths' => array(
             './module',
             './vendor',
+            './vendor/inditel',
         ),
 
         'config_glob_paths' => array(

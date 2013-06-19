@@ -6,12 +6,11 @@ class SampleService
 
     public function stuff($arg)
     {
-        if ($arg == 10 or $arg == 120 )
-            return true;
-        return false;
+        return $arg == 10;
     }
 
-    public function notTested() {
+    public function notTested()
+    {
         return false;
     }
 

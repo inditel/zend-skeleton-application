@@ -1,6 +1,6 @@
 <?php
 return array(
-    'path' => dirname(__DIR__) . '/generated',
+    'path' => 'data/tmp/generated',
     'src_dir' => 'src',
     'view_dir' => 'view',
 
