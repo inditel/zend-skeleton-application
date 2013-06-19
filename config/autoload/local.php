@@ -23,20 +23,7 @@ return array(
     ),
     'service_manager' => array(
         'factories' => array(
-            'Zend\Db\Adapter\Adapter' => function ($sm) {
-
-                $config = $sm->get('Configuration');
-                $adapter = new BjyProfiler\Db\Adapter\ProfilingAdapter($config['db']);
-
-                $adapter->setProfiler(new BjyProfiler\Db\Profiler\Profiler);
-                if (isset($dbParams['options']) && is_array($dbParams['options'])) {
-                    $options = $dbParams['options'];
-                } else {
-                    $options = array();
-                }
-                $adapter->injectProfilingStatementPrototype($options);
-                return $adapter;
-            },
+            'Zend\Db\Adapter\Adapter' => 'Helpers\Db\Adapter\ProfilingAdapterFactory',
         ),
     ),
 );

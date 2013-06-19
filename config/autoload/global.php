@@ -24,11 +24,7 @@ return array(
     ),
     'service_manager' => array(
         'factories' => array(
-            'Zend\Db\Adapter\Adapter' => function ($sm) {
-                $config = $sm->get('Configuration');
-                $adapter = new \Zend\Db\Adapter\Adapter($config['db']);
-                return $adapter;
-            },
+            'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
         ),
     ),
 );

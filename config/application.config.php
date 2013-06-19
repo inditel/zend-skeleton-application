@@ -4,6 +4,7 @@ return array(
     'modules' => array(
         'Application',
         'ZendDeveloperTools',
+        'Helpers',
     ),
 
     'module_listener_options' => array(
@@ -14,14 +15,14 @@ return array(
         ),
 
         'config_glob_paths' => array(
-            'config/autoload/{,*.}{global,local}.php',
+            'config/autoload/{,*.}{global}.php',
         ),
 
         'config_cache_enabled' => true,
-        'config_cache_key' => "config_cache",
+        'config_cache_key' => "",
         'module_map_cache_enabled' => true,
-        'module_map_cache_key' => "module_map_cache",
+        'module_map_cache_key' => "",
         'cache_dir' => "data/cache/",
-        'check_dependencies' => true,
+        'check_dependencies' => false,
     ),
 );
