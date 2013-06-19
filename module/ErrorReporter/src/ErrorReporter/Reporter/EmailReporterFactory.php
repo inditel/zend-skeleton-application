@@ -9,6 +9,7 @@ namespace ErrorReporter\Reporter;
 
 
 use Zend\ServiceManager\FactoryInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
 
 class EmailReporterFactory implements FactoryInterface
 {

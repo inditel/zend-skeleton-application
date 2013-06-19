@@ -8,7 +8,9 @@
 namespace ErrorReporter\Reporter;
 
 
+use Zend\Db\TableGateway\TableGateway;
 use Zend\ServiceManager\FactoryInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
 
 class DbReporterFactory implements FactoryInterface
 {
@@ -19,14 +21,16 @@ class DbReporterFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        // @TODO Finish method
+        $config = $serviceLocator->get('Config');
+        $config = $config['error_reporter_db'];
+        $table = $serviceLocator->get($config['table_gateway']);
+        $reporter = $this->getNewReporter($table);
+        return $reporter;
+    }
 
-        // $config = $serviceLocator->get('Config');
-        // $config = $config['error_reporter_db'];
-        // $reporter = $this->createNewReporter();
-        // $reporter->setLogger( $serviceLocator->get($config['adapter']) );
-        // $reporter->initFromConfig( $config );
-        // return $reporter
+    public function getNewReporter(TableGateway $table)
+    {
+        return new DbReporter($table);
     }
 
 }

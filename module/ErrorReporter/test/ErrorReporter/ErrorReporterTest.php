@@ -29,6 +29,10 @@ class ErrorReporterTest extends \PHPUnit_Framework_TestCase
         $this->reporterMock = $this->getMock(ErrorReporter::getClassName(), array('addPhpError', 'report'));
     }
 
+    public function tearDown() {
+        restore_error_handler();
+    }
+
     public function test_initFromConfig()
     {
         $this->setupDefaultConfigForErrorReporter();
@@ -126,9 +130,16 @@ class ErrorReporterTest extends \PHPUnit_Framework_TestCase
         echo '-------------------------------------------------------' . "\n";
         echo "\n";
 
+
         exec('php ' . __DIR__ . '/Reporter/fatalTester.php', $output, $returnValue);
         $result = (string)implode("\n", $output);
-        $this->assertContains('OutputReporter: Call to a member function xx() on a non-object', $result);
+        $this->assertContains('EchoReporter: Call to a member function xx() on a non-object', $result);
+    }
+
+    public function test_registerShutdownHandler()
+    {
+        $this->reporter->registerShutdownHandler();
+        // @TODO How to test it?
     }
 
     public function test_report()

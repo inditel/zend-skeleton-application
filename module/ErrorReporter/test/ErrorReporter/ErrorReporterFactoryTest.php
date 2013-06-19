@@ -53,4 +53,9 @@ class ErrorReporterFactoryTest extends \PHPUnit_Framework_TestCase
         $service = $factory->createService($locator);
         $this->assertEquals(array($realReporter1,$realReporter2), $service->getReporters());
     }
+
+    public function testGetNewErrorReporter() {
+        $f = new ErrorReporterFactory();
+        $this->assertInstanceOf('ErrorReporter\ErrorReporter', $f->getNewErrorReporter() );
+    }
 }

@@ -8,7 +8,9 @@
 namespace ErrorReporter\Reporter;
 
 
+use Zend\Log\LoggerInterface;
 use Zend\ServiceManager\FactoryInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
 
 class LoggerReporterFactory implements FactoryInterface
 {
@@ -19,14 +21,16 @@ class LoggerReporterFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        // @TODO Finish method
+        $config = $serviceLocator->get('Config');
+        $config = $config['error_reporter_logger'];
+        $logger = $serviceLocator->get($config['logger']);
+        $reporter = $this->getNewReporter($logger);
+        return $reporter;
+    }
 
-        // $config = $serviceLocator->get('Config');
-        // $config = $config['error_reporter_logger'];
-        // $reporter = $this->createNewReporter();
-        // $reporter->setLogger( $serviceLocator->get($config['logger']) );
-        // $reporter->initFromConfig( $config );
-        // return $reporter
+    public function getNewReporter(LoggerInterface $logger)
+    {
+        return new LoggerReporter($logger);
     }
 
 }
