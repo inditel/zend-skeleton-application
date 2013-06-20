@@ -22,8 +22,12 @@ class ErrorLoggerFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
+        $dir = './data/logs';
+        if (!is_dir($dir)) {
+            mkdir($dir);
+        }
         $log = new Logger();
-        $log->addWriter(new Stream('./data/logs/error-log-' . date('Y-m') . '.txt'));
+        $log->addWriter(new Stream($dir . '/error-log-' . date('Y-m') . '.txt'));
         return $log;
     }
 }
