@@ -18,7 +18,7 @@ return array(
         'factories' => array(
             'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
             'Whoops' => 'Zf2Whoops\WhoopsFactory',
-            'WhoopsLogger' => 'Application\Log\LoggerFactory',
+            'ErrorLogger' => 'Application\Log\ErrorLoggerFactory',
         ),
     ),
 
@@ -29,7 +29,7 @@ return array(
 
     'whoops' => array(
         // Logger service name
-        'logger' => 'WhoopsLogger',
+        'logger' => 'ErrorLogger',
 
         // These exceptions will be ignored by Whoops and logger
         'ignored_exceptions' => array(

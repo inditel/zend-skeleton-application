@@ -8,10 +8,13 @@
 namespace Application\Log;
 
 
+use Zend\Log\Logger;
+use Zend\Log\Writer\Stream;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class LoggerFactory implements FactoryInterface{
+class ErrorLoggerFactory implements FactoryInterface
+{
 
     /**
      * @param ServiceLocatorInterface $serviceLocator
@@ -19,10 +22,8 @@ class LoggerFactory implements FactoryInterface{
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        $filename = 'log_' . date('F') . '.txt';
-        $log = new \Zend\Log\Logger();
-        $writer = new \Zend\Log\Writer\Stream('./data/logs/' . $filename);
-        $log->addWriter($writer);
+        $log = new Logger();
+        $log->addWriter(new Stream('./data/logs/error-log-' . date('Y-m') . '.txt'));
         return $log;
     }
 }
