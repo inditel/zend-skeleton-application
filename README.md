@@ -1,6 +1,19 @@
 
+ZF2 skeleton app with lots of stuff :)
+----------------------------------------
+
+Integrated modules
+* [inditel/Zf2Whoops](https://github.com/inditel/zf2-whoops)
+* [ZendDeveloperTools](https://github.com/zendframework/ZendDeveloperTools)
+* [BjyProfiler](https://github.com/bjyoungblood/BjyProfiler) (Db profiler for ZendDeveloperTools)
+* [Assetic](https://github.com/kriswallsmith/assetic)
+* [ZF2 assetic module](https://github.com/widmogrod/zf2-assetic-module)
+* [phpunit](http://phpunit.de/)
+* [Zend Framework 2](http://framework.zend.com/)
+* Sample unit tests for controllers and services.
+
 Installing project
-==================
+----------------------------------------
 
 * Start composer project
 * Load inditel/zend-skeleton-application
