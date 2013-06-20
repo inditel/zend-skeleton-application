@@ -1,3 +1,0 @@
-
-* Võiks saada kas configa näiteks öelda, et mis väli on mis tüüpi Property handleriga.
-* Võiks saada öelda, et mis tabelitele mis handlereid veel lisaks rakendada.

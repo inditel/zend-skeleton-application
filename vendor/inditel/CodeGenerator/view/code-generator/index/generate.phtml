@@ -1,9 +1,0 @@
-<?php
-if( isset($message) ) {
-    echo '<div style="border: 1px solid green; background-color:lightgreen; padding: 15px; margin: 5px;">'.$message.'</div>';
-}
-$form->prepare();
-echo $this->form()->openTag($form);
-echo $this->formSubmit( $form->get('submit') );
-echo $this->form()->closeTag();
-?>

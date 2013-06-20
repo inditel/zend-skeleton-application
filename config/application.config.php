@@ -30,7 +30,7 @@ return array(
         ),
 
         'config_glob_paths' => array(
-            'config/autoload/{,*.}{global,local}.php',
+            'config/autoload/{,*.}{production,staging,testing,development}.php',
         ),
 
         'config_cache_enabled' => ($env != APP_ENV_DEVELOPMENT),
