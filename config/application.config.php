@@ -16,10 +16,10 @@ if ($env == APP_ENV_DEVELOPMENT) {
 }
 return array(
 
-    'modules' => array_merge($modules, array(
+    'modules' => array_merge(array(
+        'Zf2Whoops',
         'Application',
-        'ErrorReporter'
-    )),
+    ), $modules),
 
     'module_listener_options' => array(
 

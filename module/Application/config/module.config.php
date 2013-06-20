@@ -14,6 +14,9 @@ return array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',
         ),
+        'factories' => array(
+
+        ),
         'aliases' => array(
             'translator' => 'MvcTranslator',
         ),
@@ -44,7 +47,20 @@ return array(
             ),
         ),
     ),
-    
+
+    'whoops' => array(
+        'json_exceptions' => array(
+            'display' => true,
+            'ajax_only' => true,
+            'show_trace' => true
+        ),
+        'logger' => 'Logger',
+        'ignored_exceptions' => array(
+            'BjyAuthorize\Exception\UnAuthorizedException'
+        ),
+        'editor' => 'sublime',
+    ),
+
     'view_manager' => array(
         'display_not_found_reason' => true,
         'display_exceptions' => true,
@@ -59,6 +75,9 @@ return array(
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
+        ),
+        'strategies' => array(
+            'Zend\View\Strategy\JsonStrategy'
         ),
     ),
 );
