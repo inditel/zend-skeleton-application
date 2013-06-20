@@ -1,4 +1,5 @@
 <?php
+//return require('../../../config/application.config.php');
 return array(
     'modules' => array(
         'Application',

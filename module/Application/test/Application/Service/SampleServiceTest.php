@@ -20,12 +20,11 @@ class SampleServiceTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->service = new SampleService();
-
     }
 
     public function testStuff()
     {
-        $this->assertEquals($this->service->stuff(10), true);
-        $this->assertEquals($this->service->stuff(8), false);
+        $this->assertEquals($this->service->is10(10), true);
+        $this->assertEquals($this->service->is10(8), false);
     }
 }

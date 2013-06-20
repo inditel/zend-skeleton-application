@@ -11,8 +11,8 @@ return array(
     'router' => require('routes/routes.php'),
     'service_manager' => array(
         'abstract_factories' => array(
-            'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
-            'Zend\Log\LoggerAbstractServiceFactory',
+            //'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
+            //'Zend\Log\LoggerAbstractServiceFactory',
         ),
         'factories' => array(
 
@@ -26,7 +26,6 @@ return array(
     'di' => array(
         'allowed_controllers' => array(
             'Application\Controller\IndexController',
-            'Application\Controller\GreetingController',
         ),
         'instance' => array(
             'preference' => array(

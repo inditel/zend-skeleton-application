@@ -4,14 +4,9 @@ namespace Application\Service;
 class SampleService
 {
 
-    public function stuff($arg)
+    public function is10($arg)
     {
         return $arg == 10;
-    }
-
-    public function notTested()
-    {
-        return false;
     }
 
 }

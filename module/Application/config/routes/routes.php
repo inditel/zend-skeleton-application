@@ -11,13 +11,13 @@ return array(
                 ),
             ),
         ),
-        'invalid_route' => array(
+        'json' => array(
             'type' => 'Zend\Mvc\Router\Http\Literal',
             'options' => array(
-                'route' => '/invalid',
+                'route' => '/json',
                 'defaults' => array(
-                    'controller' => 'Application\Controller\InvalidController',
-                    'action' => 'index',
+                    'controller' => 'Application\Controller\IndexController',
+                    'action' => 'json',
                 ),
             ),
         ),
