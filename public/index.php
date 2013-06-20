@@ -13,4 +13,4 @@ require 'init_autoloader.php';
 // Run the application!
 Zend\Mvc\Application::init(require 'config/application.config.php')->run();
 
-//echo (microtime(true)-REQUEST_MICROTIME).' seconds';
+// echo (microtime(true)-REQUEST_MICROTIME).' seconds';

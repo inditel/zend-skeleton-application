@@ -11,6 +11,8 @@ return array(
         ),
     ),
 
-
+    'assetic_configuration' => array(
+        'buildOnRequest' => true,
+    ),
 
 );

@@ -12,8 +12,4 @@ return array(
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\';'
         ),
     ),
-
-    'assetic_configuration' => array(
-        'buildOnRequest' => true,
-    ),
 );
