@@ -20,7 +20,7 @@ switch($env) {
 return array(
 
     'modules' => array_merge(array(
-        'Zf2Whoops',
+        //'Zf2Whoops',
         'AsseticBundle',
         'Application',
     ), $modules),

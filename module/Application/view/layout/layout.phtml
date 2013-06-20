@@ -1,4 +1,4 @@
-<?php echo $this->doctype(); ?>
+<?php echo $this->doctype()->setDoctype(\Zend\View\Helper\Doctype::HTML5); ?>
 
 <html lang="en">
 <head>
@@ -40,6 +40,6 @@
             Ltd. <?php echo $this->translate('All rights reserved.') ?></p>
     </footer>
 </div>
-<?php echo $this->inlineScript() ?>
+<?php echo $this->plugin('InlineScript'); ?>
 </body>
 </html>
