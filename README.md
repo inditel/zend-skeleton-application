@@ -1,8 +1,7 @@
-
-ZF2 skeleton app with lots of stuff :)
+ZF2 skeleton application with extras
 ----------------------------------------
 
-Integrated modules
+**Integrated modules:**
 * [inditel/Zf2Whoops](https://github.com/inditel/zf2-whoops)
 * [ZendDeveloperTools](https://github.com/zendframework/ZendDeveloperTools)
 * [BjyProfiler](https://github.com/bjyoungblood/BjyProfiler) (Db profiler for ZendDeveloperTools)
@@ -11,6 +10,7 @@ Integrated modules
 * [phpunit](http://phpunit.de/)
 * [Zend Framework 2](http://framework.zend.com/)
 * Sample unit tests for controllers and services.
+
 
 Installing project
 ----------------------------------------
@@ -29,19 +29,14 @@ Add this line to your apache config
 If you want to test staging, testing or production, update .htaccess file.
 Uncomment
         # SetEnv "APP_ENV" "development"
-
 **Be careful not to commit with it!**
 
 
-Setting up PHPStorm environment
--------------------------------
+To start unit testing (PHPStorm)
+--------------------------------
 
 * Open project settings -> PHP -> PHPUnit.
 Set "Use custom loader" and choose vendor/autoload.php file.
-
-
-To start unit testing
----------------------
 
 * Open Run/Debug Configurations
  - Add new PHPUnit configuration
