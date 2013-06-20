@@ -2,16 +2,26 @@
 $env = getenv('APP_ENV') ? : 'production';
 
 $modules = array();
-if ($env == 'development') {
+if ($env == 'development' || $env == 'testing') {
     $modules = array(
         'ZendDeveloperTools',
         'BjyProfiler',
     );
 }
+
+switch($env) {
+    case 'production': $paths = 'production'; break;
+    case 'staging': $paths = 'production,staging'; break;
+    case 'testing': $paths = 'production,staging,testing'; break;
+    case 'development': $paths = 'production,staging,testing,development'; break;
+
+}
+
 return array(
 
     'modules' => array_merge(array(
         'Zf2Whoops',
+        'AsseticBundle',
         'Application',
     ), $modules),
 
@@ -23,14 +33,14 @@ return array(
         ),
 
         'config_glob_paths' => array(
-            'config/autoload/{,*.}{production,staging,testing,development}.php',
+            'config/autoload/{,*.}{'.$paths.'}.php',
         ),
 
-        'config_cache_enabled' => ($env != 'development'),
+        'config_cache_enabled' => ($env != 'development' && $env != 'testing'),
         'config_cache_key' => "cache",
-        'module_map_cache_enabled' => ($env != 'development'),
+        'module_map_cache_enabled' => ($env != 'development' && $env != 'testing'),
         'module_map_cache_key' => "cache",
         'cache_dir' => "data/cache/",
-        'check_dependencies' => ($env == 'development'),
+        'check_dependencies' => ($env == 'development' && $env != 'testing'),
     ),
 );

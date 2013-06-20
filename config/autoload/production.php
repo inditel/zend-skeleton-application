@@ -27,6 +27,10 @@ return array(
         'display_exceptions' => false,
     ),
 
+    'assetic_configuration' => array(
+        'buildOnRequest' => false,
+    ),
+
     'whoops' => array(
         // Logger service name
         'logger' => 'ErrorLogger',
