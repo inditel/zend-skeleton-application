@@ -9,20 +9,30 @@ if ($env == 'development' || $env == 'testing') {
     );
 }
 
-switch($env) {
-    case 'production': $paths = 'production'; break;
-    case 'staging': $paths = 'production,staging'; break;
-    case 'testing': $paths = 'production,staging,testing'; break;
-    case 'development': $paths = 'production,staging,testing,development'; break;
+switch ($env) {
+    case 'production':
+        $paths = 'production';
+        break;
+    case 'staging':
+        $paths = 'production,staging';
+        break;
+    case 'testing':
+        $paths = 'production,staging,testing';
+        break;
+    case 'development':
+        $paths = 'production,staging,testing,development';
+        break;
 
 }
 
 return array(
 
     'modules' => array_merge(array(
-        //'Zf2Whoops',
+        'Zf2Whoops',
         'AsseticBundle',
-        'Application',
+        'DoctrineModule',
+        'DoctrineORMModule',
+        'Application'
     ), $modules),
 
     'module_listener_options' => array(
@@ -33,7 +43,7 @@ return array(
         ),
 
         'config_glob_paths' => array(
-            'config/autoload/{,*.}{'.$paths.'}.php',
+            'config/autoload/{,*.}{' . $paths . '}.php',
         ),
 
         'config_cache_enabled' => ($env != 'development' && $env != 'testing'),

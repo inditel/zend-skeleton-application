@@ -19,11 +19,12 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": ">2.2.0rc1",
+        "zendframework/zendframework": "2.*",
         "zendframework/zend-developer-tools": "dev-master",
         "inditel/bjy-profiler": "dev-master",
         "phpunit/phpunit": "3.7.21",
         "inditel/zf2-whoops": "dev-master",
-        "widmogrod/zf2-assetic-module": "1.*"
+        "widmogrod/zf2-assetic-module": "1.*",
+        "doctrine/doctrine-orm-module": "0.*"
     }
 }

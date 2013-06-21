@@ -44,3 +44,10 @@ Set "Use custom loader" and choose vendor/autoload.php file.
  - Select "Defined in the configuration file"
  - Check "Use alternative configuration file"
  - Choose module/YOUR_MODULE/test/phpunit.xml
+
+
+Generating doctrine entities
+----------------------------
+
+* Check doctrine-gen.php
+* Run doctrine-gen.php

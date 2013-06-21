@@ -24,4 +24,20 @@ class IndexController extends AbstractActionController
     {
         return new JsonModel(array('x' => 10));
     }
+
+    public function doctrineAction() {
+
+        $em = $this->getServiceLocator()
+            ->get('doctrine.entitymanager.orm_default');
+        $data = $em->getRepository('Application\Entity\Test')->findAll();
+        /** @var \Application\Entity\Test $row */
+        foreach($data as $key=>$row)
+        {
+            echo $row->getName();
+            echo '<br />';
+        }
+
+        $this->layout()->setterminal(true);
+        return false;
+    }
 }
