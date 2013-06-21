@@ -2,16 +2,16 @@ ZF2 skeleton application with extras
 ----------------------------------------
 
 **Integrated modules:**
-* [inditel/Zf2Whoops](https://github.com/inditel/zf2-whoops)
-* [ZendDeveloperTools](https://github.com/zendframework/ZendDeveloperTools)
-* [BjyProfiler](https://github.com/bjyoungblood/BjyProfiler) (Db profiler for ZendDeveloperTools)
-* [Assetic](https://github.com/kriswallsmith/assetic)
-* [ZF2 assetic module](https://github.com/widmogrod/zf2-assetic-module)
-* [phpunit](http://phpunit.de/)
 * [Zend Framework 2](http://framework.zend.com/)
+* [phpunit](http://phpunit.de/)
 * [Doctrine](http://doctrine-project.org/)
 * [DoctrineORMModule](https://github.com/doctrine/DoctrineORMModule)
 * [DoctrineModule](https://github.com/doctrine/DoctrineModule)
+* [inditel/Zf2Whoops](https://github.com/inditel/zf2-whoops)
+* [Assetic](https://github.com/kriswallsmith/assetic)
+* [ZF2 assetic module](https://github.com/widmogrod/zf2-assetic-module)
+* [ZendDeveloperTools](https://github.com/zendframework/ZendDeveloperTools)
+* [BjyProfiler](https://github.com/bjyoungblood/BjyProfiler) (Db profiler for ZendDeveloperTools)
 * Sample unit tests for controllers and services.
 
 
