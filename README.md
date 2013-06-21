@@ -9,6 +9,9 @@ ZF2 skeleton application with extras
 * [ZF2 assetic module](https://github.com/widmogrod/zf2-assetic-module)
 * [phpunit](http://phpunit.de/)
 * [Zend Framework 2](http://framework.zend.com/)
+* [Doctrine](http://doctrine-project.org/)
+* [DoctrineORMModule](https://github.com/doctrine/DoctrineORMModule)
+* [DoctrineModule](https://github.com/doctrine/DoctrineModule)
 * Sample unit tests for controllers and services.
 
 
